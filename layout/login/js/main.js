@@ -86,7 +86,7 @@ btn.addEventListener("click" , function(e){
         window.location.replace("../secretaria/src/index.html")
     }
      else{
-      alert("Usuario não encontrado")
+      alert("Usuario ou senha estão incorretas")
       location.reload();
      }
 
