@@ -76,13 +76,13 @@ btn.addEventListener("click" , function(e){
     else if(value == "pais.mateus@gmail.com" && valuePassword == "123" ){
         window.location.replace("../aluno/src/index.html")
     }
-    else if(value == "financeiro.@gmail.com" && valuePassword == "123" ){
+    else if(value == "financeiro@gmail.com" && valuePassword == "123" ){
         window.location.replace("../financeiro/src/index.html")
     }
-    else if(value == "professor.@gmail.com" && valuePassword == "123" ){
-        window.location.replace("../professor/src/index.html")
+    else if(value == "professor@gmail.com" && valuePassword == "1234" ){
+        window.location.replace("../professor/index.html")
     }
-    else if(value == "secretaria.@gmail.com" && valuePassword == "123" ){
+    else if(value == "secretaria@gmail.com" && valuePassword == "123" ){
         window.location.replace("../secretaria/src/index.html")
     }
      else{
