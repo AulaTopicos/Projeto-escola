@@ -3,18 +3,54 @@ body{
     padding: 0%;
 
 }
-.logo {
+
+
+/* ====================VIDA ACADEMICA================== */
+.section-content-vida-academica{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 20%;
-    height: 60%;
-    
+    width: calc(100% - 400px);
+    height: 25em;
+    top: 0%;
+    left: 20em;
+    margin-top: 7em;
 }
-.logo img{
-    border-radius:400px;
-    opacity: 0.5;
+
+
+.content-vida-academica{
+    width: 400px;
+ }
+#faltas p{
+    color: black;
+}
+ select{
+     width: calc(100% - 20px);
+     height: 30px;
+ }
+
+
+ /*============================ CONSULTA PROVA============================ */
+ .header{
+     background-color: #292929;
+     height: 100px;
+     color: white;
+ }
+ .caixa-prova{
+    border: 3px solid black;
+    padding: 50px;
+    font-size: 30px;
+}
+.area-prova-realizada{
+    max-width: 500px;   
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: white;
+    padding: 5px;
+}
+.prova-realizadas{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    
+    
 }
