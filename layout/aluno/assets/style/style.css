@@ -50,7 +50,9 @@ body{
     display: flex;
     justify-content: center;
     justify-content: space-between;
-    align-items: center;
-    
-    
+    align-items: center; 
+}
+
+.list-group-item{
+    cursor: pointer;
 }

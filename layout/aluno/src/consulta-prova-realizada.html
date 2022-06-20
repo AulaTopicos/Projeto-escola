@@ -1,53 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>3AS</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../../../assets/style-geral/style.css">
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="../../../assets/style-geral/style.css" />
+    <link rel="stylesheet" href="../assets/style/style.css" />
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/school.png"/>
-</head>
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/color/48/000000/school.png"
+    />
 
-<body>
+    <script
+      data-require="mustache.js@0.7.2"
+      data-semver="0.7.2"
+      src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js"
+    ></script>
+    <script
+      data-require="jquery@2.2.0"
+      data-semver="2.2.0"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"
+    ></script>
+  </head>
 
+  <body>
     <header>
-        <div class="header d-sm-flex justify-content-around align-items-center">
-            <h2 id="colegio"></h2>
-            <h1 id="usuario"></h1>
-            <h2 id="matricula"></h2>
-        </div>
+      <div class="mytable header d-sm-flex justify-content-center justify-content-around align-items-center">
+        <script class="item-template" type="text/header">
+          {{#itens}}
+              <h2 id="colegio">{{colegio}}</h2>
+              <h1 id="usuario">{{nome}}</h1>
+              <h2 id="matricula">{{matricula}}</h2>
+          {{/itens}}
+        </script>
+      </div>
     </header>
 
     <main>
-        <div style="margin-left: 20px;">
-            <a href="index.html" class="btn btn-secondary mt-5"><i class="fa fa-house-user"></i>Sair</a>
+      <div style="margin-left: 20px">
+        <a href="index.html" class="btn btn-secondary mt-5"
+          ><i class="fa fa-house-user"></i>Sair</a
+        >
+      </div>
+      <div class="d-flex justify-content-md-center flex-column">
+        <h1 style="margin: auto">Provas Realizadas</h1>
+      </div>
+      <section class="mytable2">
+        <div>
+          <script class="provasRealizadas" type="text/provasRealizadas">
+                    {{#itens}}
+                        <div class="area-prova-realizada">
+                                <div class="prova-realizadas border-bottom">
+                                    <div>
+                                        <p id="area-data">{{disciplinas.matematica.provaRealizadas.data}}</p>
+                                    </div>
+                                    <div>
+                                        <p id="area-presenca">Presença: {{disciplinas.matematica.provaRealizadas.presenca ? "Presente" : "Falta"}}</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p>{{disciplinas.matematica.provaRealizadas.nome}}</p>
+                                    <p>Turma: {{disciplinas.matematica.provaRealizadas.turma}}</p>
+                                    <p>Turno: {{disciplinas.matematica.provaRealizadas.turno}}</p>
+                                    <p>Nota: {{disciplinas.matematica.provaRealizadas.nota}}</p>
+                                </div>
+                        </div>
+                    {{/itens}}
+          </script>
         </div>
-        <div class="d-flex justify-content-md-center flex-column">
-            <h1 style="margin: auto;">Provas Realizadas</h1>
-        </div>
-        <section style="" id="section">
+      </section>
+      <!-- <section id=" section">
 
-        </section>
+        </section> -->
     </main>
-    
-
 
     <!-- jQuery CDN - versão Slim (sem AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
     <!-- script geral -->
     <script src="../../../script-geral/script.js"></script>
     <!-- script do aluno -->
@@ -56,7 +115,5 @@
     <script src="../../../api/aluno/aluno.js"></script>
     <script src="../../../api/aluno/header.js"></script>
     <script src="../../../api/aluno/content.js"></script>
-
-</body>
-
+  </body>
 </html>
