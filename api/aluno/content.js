@@ -63,3 +63,23 @@ output = Mustache.render(faltas, alunoJson);
 $(".mytable2").append(output);
 
 
+atividadeExtra = $('.atividadeExtra').html();
+output = Mustache.render(atividadeExtra, alunoJson);
+$(".mytable3").append(output);
+
+minhasFaltas = $('.minhasFaltas').html();
+output = Mustache.render(minhasFaltas, alunoJson);
+$(".mytable4").append(output);
+
+notas = $('.notas').html();
+output = Mustache.render(notas, alunoJson);
+$(".mytable5").append(output);
+
+usuario = $('.usuario').html();
+output = Mustache.render(usuario, alunoJson);
+$(".mytable6").append(output);
+
+curso = $('.curso').html();
+output = Mustache.render(curso, alunoJson);
+$(".mytable7").append(output);
+

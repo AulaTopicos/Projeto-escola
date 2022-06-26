@@ -30,11 +30,11 @@
     <header>
         <div class="mytable header d-sm-flex justify-content-center justify-content-around align-items-center">
             <script class="item-template" type="text/header">
-              {{#itens}}
+            
                   <h2 id="colegio">{{colegio}}</h2>
                   <h1 id="usuario">{{nome}}</h1>
                   <h2 id="matricula">{{matricula}}</h2>
-              {{/itens}}
+              
             </script>
           </div>
     </header>
@@ -45,12 +45,7 @@
         </div>
         <section class="mytable2">
           <div>
-              <script class="provaOnline" type="text/provaOnline">
-                {{#itens}}
-                    <h1 class="text-center mt-5">{{disciplinas.matematica.provaOnline}}</h1>
-                {{/itens}}
-              </script>
-
+                <h1 id="temProvaOnline" class="text-center mt-5"></h1>        
           </div>
         </section>
     </main>
@@ -59,6 +54,7 @@
 
     <!-- jQuery CDN - versão Slim (sem AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="../assets/script/script-aluno.js"></script>
     <!-- script geral -->
     <script src="../../../script-geral/script.js"></script>
     <!-- script do aluno -->
@@ -67,6 +63,23 @@
     <script src="../../../api/aluno/aluno.js"></script>
     <script src="../../../api/aluno/header.js"></script>
     <script src="../../../api/aluno/content.js"></script>
+
+    <script>
+        alunoJson
+        const semProva = "Não há provas disponíveis";
+        const temProvaOnline = document.querySelector('#temProvaOnline');
+        let provasOnline = 0;
+        alunoJson.disciplinas.forEach((item) => {
+            provasOnline = provasOnline + item.provaOnline;
+        });
+
+        if (provasOnline > 0) {
+            temProvaOnline.innerHTML = `Você tem ${provasOnline} prova${provasOnline != 1 ? 's' : ''} online`
+        } else {
+            temProvaOnline.innerHTML = semProva;
+        }
+
+    </script>
 
 </body>
 

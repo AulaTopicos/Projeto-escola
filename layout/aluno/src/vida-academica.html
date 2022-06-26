@@ -24,34 +24,37 @@
       src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
       integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
       crossorigin="anonymous"
-    ></script>
+    >
+    </script>
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
       integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
       crossorigin="anonymous"
-    ></script>
+    >
+    </script>
 
     <!-- favicon -->
     <link
       rel="shortcut icon"
       href="https://img.icons8.com/color/48/000000/school.png"
-    />
-
+     />
     <script
       data-require="mustache.js@0.7.2"
       data-semver="0.7.2"
       src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js"
-    ></script>
+    >
+    </script>
     <script
       data-require="jquery@2.2.0"
       data-semver="2.2.0"
       src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"
-    ></script>
+    >
+    </script>
   </head>
 
   <body>
-    <section>
+  <section>
       <div class="wrapper">
           <!-- Sidebar  -->
           <nav id="sidebar">
@@ -66,11 +69,11 @@
                           Home
                       </a>
                      
-                      <a href="consulta-provas.html">
+                      <a href="usuario.html">
                           <i class="fas fa-user"></i>
                           Usuário
                       </a>
-                      <a href="curso.html">
+                      <a href="consulta-material-de-estudo.html">
                           <i class="fas fa-book"></i>
                           Curso
                       </a>
@@ -118,93 +121,181 @@
       </div>
       
   </section>
-
     <main>
       <section class="section-content-vida-academica d-md-flex justify-content-between">
         <section class="content-vida-academica">
-          <ul class="list-group">
-            <a href="#">
-              <li class="list-group-item active" aria-current="true">Vida Acadêmica</li>
-            </a>
-            <a href="consulta-provas.html" >
-              <li class="list-group-item">Consulta de prova</li>
-            </a>
-            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#eventos">Atividade extras</li>
-            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#falta">Minhas Faltas</li>
-            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notas">Minhas Notas</li>
-            <a href="calendario.html">
-              <li class="list-group-item">Calendário</li>
-            </a>
-          </ul>
+            <ul class="list-group">
+              <a href="#">
+                <li class="list-group-item active" aria-current="true">Vida Acadêmica</li>
+              <a href="consulta-provas.html" >
+                <li class="list-group-item">Consulta de prova</li>
+              </a>
+              <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#eventos">Atividade extras</li>
+              <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#falta">Minhas Faltas</li>
+              <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#notas">Minhas Notas</li>
+              <a href="calendario.html">
+                <li class="list-group-item">Calendário</li>
+                
+              </a>
+            </ul>
         </section>
-      <section class="mytable2 content-vida-academica">
-        <div>
-          <script class="faltas" type="text/faltas">
-                    {{#itens}}
-                      <ul class="list-group" >
-                        <p class="list-group-item active" aria-current="true">Minhas Faltas</p>
-                        <div class="faltas text-center">
-                          <label for="">Selecione o período letivo</label><br>
-                          <select id="id_do_select" class="select-estados" data-placeholder='Nenhum valor selecionado...'>
-                            <option value="1">{{semestre.primeiro.nome}}</option>
-                            <option value="2">{{semestre.segundo.nome}}</option>
-                          </select><br><br>
-                          <div>
-                            <p class="p-3 mb-2 text-center" id="faltas" >Total de Faltas: {{semestre.primeiro.faltas}}</p>
-                            <p class="text-danger text-center" id="atencao">Atenção ao seu limite de faltas!</p>
-                          </div>
-                        </div>
-                      </ul>
-                    {{/itens}}
-          </script>
-        </div>
-      </section>
-      <!-- <section id=" section">
-
-        </section> -->
+        <section class="mytable2 content-vida-academica">
+          <div>
+            <script class="faltas" type="text/faltas">
+              <ul class="list-group" >
+                <p class="list-group-item active" aria-current="true">Minhas Faltas</p>
+                <div class="faltas text-center estados">
+                  <label for="">Selecione o período letivo</label><br>
+                  <select id="select-faltas-semestre" class="select-estados" data-placeholder='Nenhum valor selecionado...'>
+                    {{#semestre.semestres}}
+                      <option value="{{id}}">{{nome}}</option>
+                    {{/semestre.semestres}}
+                  </select><br><br>
+                  <div>
+                    <p class="p-3 mb-2 text-center" id="faltas" >Total de Faltas: <span></span></p>
+                    <p class="text-danger text-center" id="atencao">Atenção ao seu limite de faltas!</p>
+                  </div>
+                </div>
+              </ul>
+            </script>
+          </div>
+        </section>
         <!-- MODAL -->
-    <section>
-      <!-- Modal Eventos -->
-    <div class="modal fade" id="eventos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Eventos</h5>
-            </div>
-            <div class="modal-body">
-              <div class="card mb-3" style="max-width: 740px;">
-                <div class="row g-0">
-                  <div class="col-md-4 aventos-img">
-                    <img src="/assets/images/aluno/fut.jpg" class="img-fluid rounded-start" alt="...">
+        <!-- Modal Atividade extras -->
+        <section>  
+          <div class="modal fade" id="eventos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Eventos</h5>
+                </div>
+
+                <div class="modal-body mytable3 ">
+                  <div>
+                    <script class="atividadeExtra" type="text/atividadeExtra">
+                      {{#ativExtra}}
+                      <div class="card mb-3" style="max-width: 740px;">
+                        <div class="row g-0">
+                          <div class="col-md-4 aventos-img">
+                              <img src="{{url}}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body" style="background-color: rgb(255, 255, 255);">
+                              <h5 class="card-title" id="campeonato"></h5>
+                              <p class="card-text">{{discricao}}</p>
+                              <p class="card-text"><small class="text-muted">{{data}} <a href=""
+                                    rel="noopener noreferrer" style="color: blue;" data-bs-toggle="modal"
+                                    data-bs-target="#insc">Se inscreva aqui</a></small></p>
+                            </div>
+                          </div>
+                        </div>  
+                      </div>
+                      {{/ativExtra}}
+                    </script>
                   </div>
-                  <div class="col-md-8">
-                    <div class="mytable2 card-body" style="background-color: rgb(255, 255, 255);">
-                      <h5 class="card-title" id="campeonato"></h5>
-                      <p class="card-text">
-                        <div>
-                          <script class="provasRealizadas" type="text/provasRealizadas">
-                                    {{#itens}}
-                                     
-                                    {{/itens}}
-                          </script>
-                        </div>
-                      </p>
-                      <p class="card-text"><small class="text-muted">A partir do dia 08/05/2022 as 08:00 <a href=""
-                            rel="noopener noreferrer" style="color: blue;" data-bs-toggle="modal"
-                            data-bs-target="#insc">Se inscreva aqui</a></small></p>
-                    </div>
-                  </div>
-                </div>  
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </section>
+       <!-- Modal Faltas-->
+        <section>
+        <div class="modal fade" id="falta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Faltas</h5>
+              </div>
+
+              <div class="modal-body mytable4 ">
+                <div>
+                  <script class="minhasFaltas" type="text/minhasFaltas">
+                    <div>
+                      <table class="table">
+                        <thead class="table bg-info">
+                          <tr>
+                            <th scope="col">Disciplina</th>
+                            <th scope="col">Turma</th>
+                            <th scope="col">1º Semestre</th>
+                            <th scope="col">2º Semestre</th>
+                            <th scope="col">Total de faltas</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#disciplinas}}
+                            <tr>
+                              <td>{{nome}}</td>
+                              <td>{{turma}}</td>
+                              <td>{{faltas.semestre1}}</td>
+                              <td>{{faltas.semestre2}}</td>
+                              <td></td>
+                            </tr>
+                          {{/disciplinas}}
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </script>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-</section>
-    </main>
+          </div>
+        </section>
+        <!-- Modal Notas-->
+        <section>
+              <div class="modal fade" id="notas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Notas</h5>
+                    </div>
+        
+                    <div class="modal-body mytable5 ">
+                      <div>
+                        <script class="notas" type="text/notas">
+                          {{#disciplinas}}
+                            <h4>{{nome}}</h4>
+                            <table class="table">
+                              <thead class="table bg-info">
+                                <tr>
+                                  <th scope="col">Nome</th>
+                                  <th scope="col">Data Entrega </th>
+                                  <th scope="col">Nota</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {{#trabalhos}}
+                                  <tr>
+                                    <td>{{nome}}</td>
+                                    <td>{{dataEntrega}}</td>
+                                    <td>{{nota}}</td>
+                                  </tr>
+                                {{/trabalhos}}
+                              </tbody>
+                            </table>
+                          {{/disciplinas}}
+                        </script>
+                      </div>
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+        </section>
+      </section>
+  </main>
 
     <!-- jQuery CDN - versão Slim (sem AJAX) -->
     <script
@@ -226,5 +317,23 @@
     <script src="../../../api/aluno/aluno.js"></script>
     <script src="../../../api/aluno/header.js"></script>
     <script src="../../../api/aluno/content.js"></script>
+
+    <script>
+
+      const selectFaltasSemestre = document.querySelector('#select-faltas-semestre');
+      const faltas = document.querySelector('#faltas span');
+      faltas.innerHTML = alunoJson.semestre.semestres[0].faltas;
+
+      selectFaltasSemestre.addEventListener('change', (event) => {
+
+        alunoJson.semestre.semestres.forEach((item) => {
+          if(item.id.toString() === event.target.value) {
+            faltas.innerHTML = item.faltas;
+          }
+        });
+        
+      });
+    </script>
+
   </body>
 </html>

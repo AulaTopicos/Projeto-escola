@@ -119,25 +119,25 @@
         
     </section>
     <main>
-
-      <section class="mytable7 section-content-vida-academica d-md-flex ">
-       
-          <script class="curso" type="text/curso">
-            {{#disciplinas}}
-            {{#material}}
-              <div class="card" style="width: 18rem;">
-                <img src="../assets/img/imgMatematica.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h2>{{nome}}</h2>
-                  <h3 class="card-text">{{disciplinas.matematica.nome}}</h3>
-                  <a href="{{material}}" target="_blank" download class="btn btn-primary">Baixar material a se estudado</a>
+      <section class="mytable6 section-content-vida-academica d-md-flex justify-content-between">
+          <script class="usuario" type="text/usuario">
+                <div class="card card-aluno">
+                  <div class="card-header">
+                    <h4> Nome: {{nome}}</h4>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">{{matricula}}</p>
+                    <p class="card-text">E-mail: {{email}}</p>
+                    <p class="card-text">Celular: {{numero_de_telefone}}</p>
+                    <p class="card-text">Sexo: {{genero}}</p>
+                    <p class="card-text">Data de nascimento: {{ata_nascimento}}</p>
+                    <p class="card-text">Endereço: {{endereco}}</p>
+                  </div>
                 </div>
-              </div>_
-            {{/material}}
-            {{/disciplinas}}
- 
           </script>
+        
       </section>
+
     </main>
 
     <!-- jQuery CDN - versão Slim (sem AJAX) -->

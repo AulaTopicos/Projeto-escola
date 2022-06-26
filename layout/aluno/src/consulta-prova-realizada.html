@@ -54,11 +54,11 @@
     <header>
       <div class="mytable header d-sm-flex justify-content-center justify-content-around align-items-center">
         <script class="item-template" type="text/header">
-          {{#itens}}
+       
               <h2 id="colegio">{{colegio}}</h2>
               <h1 id="usuario">{{nome}}</h1>
               <h2 id="matricula">{{matricula}}</h2>
-          {{/itens}}
+       
         </script>
       </div>
     </header>
@@ -75,24 +75,27 @@
       <section class="mytable2">
         <div>
           <script class="provasRealizadas" type="text/provasRealizadas">
-                    {{#itens}}
-                        <div class="area-prova-realizada">
-                                <div class="prova-realizadas border-bottom">
-                                    <div>
-                                        <p id="area-data">{{disciplinas.matematica.provaRealizadas.data}}</p>
-                                    </div>
-                                    <div>
-                                        <p id="area-presenca">Presença: {{disciplinas.matematica.provaRealizadas.presenca ? "Presente" : "Falta"}}</p>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <p>{{disciplinas.matematica.provaRealizadas.nome}}</p>
-                                    <p>Turma: {{disciplinas.matematica.provaRealizadas.turma}}</p>
-                                    <p>Turno: {{disciplinas.matematica.provaRealizadas.turno}}</p>
-                                    <p>Nota: {{disciplinas.matematica.provaRealizadas.nota}}</p>
-                                </div>
-                        </div>
-                    {{/itens}}
+						{{#disciplinas}}
+							<h4>{{nome}}</h4>
+							{{#provaRealizadas}}
+								<div class="area-prova-realizada">
+									<div class="prova-realizadas border-bottom">
+											<div>
+													<p id="area-data">{{data}}</p>
+											</div>
+											<div>
+													<p id="area-presenca">Presença: {{presenca ? "Presente" : "Falta"}}</p>
+											</div>
+									</div>
+									<div class="mt-3">
+											<p>{{nome}}</p>
+											<p>Turma: {{turma}}</p>
+											<p>Turno: {{turno}}</p>
+											<p>Nota: {{nota}}</p>
+									</div>
+								</div>
+							{{/provaRealizadas}}
+						{{/disciplinas}}
           </script>
         </div>
       </section>
