@@ -50,7 +50,31 @@ body{
     display: flex;
     justify-content: center;
     justify-content: space-between;
-    align-items: center;
-    
-    
+    align-items: center; 
+}
+
+.list-group-item{
+    cursor: pointer;
+}
+
+
+/* ========================Atividade extra============= */
+.aventos-img img{
+    max-width:250px;
+    height: 100%;
+}
+
+/* ========================Materia/curso============= */
+.materia-portugues{
+    margin-left: 30px;
+}
+
+
+
+/* ===============usuario=========== */
+.card-aluno {
+   width: 50em;
+}
+.card-aluno p{
+    font-size: 1.3em;
 }

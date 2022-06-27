@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>3AS</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../../../assets/style-geral/style.css">
+    <link rel="stylesheet" href="../../aluno/assets/style/style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/school.png"/>
+</head>
+
+<body>
+
+    <section>
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Colégio 3AS </h3>
+                </div>
+    
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="../src/index.html">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                        <a href="consulta-aluno.html">
+                            <i class="fas fa-book"></i>
+                           Pesquisar aluno
+                        </a>
+                    </li>
+                    <li>
+                        
+                    </li>
+                    <li>
+                        <a href="../../login/index.html">
+                            <i class="fas fa-power-off"></i>
+                            Logof
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content  -->
+            <div id="content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
+                      
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+    </section>
+   
+    <section class="section-content d-md-flex justify-content-between section-content-vida-academica">
+        <div id="divConteudo">
+          <table class="table" id="tabela">
+              <thead>
+                  <tr>
+                      <th>Nome do aluno</th>
+                      <th>Serie</th></th>
+                      <th>Valor</th>
+                      <th>Ação</th>
+                  </tr>
+                  <tr>
+                      <th><input type="text" id="txtColuna1"/></th>
+                      <th><input type="text" id="txtColuna2"/></th>
+                      <th><input type="text" id="txtColuna3"/></th>
+                      
+                  </tr>            
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row">Victor</td>
+                  <td>8º ano</td>
+                  <td>R$2,000</td>
+                  <td>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#notas">
+                      <i class="fa fa-eye"></i>
+                    </a>
+                      <div class="btn btn-success" onclick="myFunction()">Enviar</div> 
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">Vinicios</td>
+                  <td>8º ano</td>
+                  <td>R$2,000</td>
+                  <td>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#notas">
+                      <i class="fa fa-eye"></i>
+                    </a>
+                      <div class="btn btn-success" onclick="myFunction()">Enviar</div> 
+                  </td>
+                </tr>            
+                <tr>
+                  <td scope="row">Mateus</td>
+                  <td>5º ano</td>
+                  <td>R$2,000</td>
+                  <td>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#notas">
+                      <i class="fa fa-eye"></i>
+                    </a>
+                      <div class="btn btn-success" onclick="myFunction()">Enviar</div> 
+                  </td>
+                </tr>
+                <td scope="row">Vinicios Oliveira</td>
+                <td>7º ano</td>
+                <td>R$2,000</td>
+                <td>
+                  <a href="" data-bs-toggle="modal" data-bs-target="#notas">
+                    <i class="fa fa-eye"></i>
+                  </a>
+                    <div class="btn btn-success" onclick="myFunction()">Enviar</div> 
+                </td>
+              </tr>        
+              </tbody>
+          </table>
+      </div>     
+    </section>
+  
+    
+    <div class="modal fade" id="notas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Financeiro</h5>
+            </div>
+            <div class="modal-body">
+            <div>Victor</div>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Turma</th>
+                <th scope="col">Valor mensal</th>
+                <th scope="col">Valor atividade extras</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>8º ano</td>
+                <td>R$1,500</td>
+                <td>R$200 - evento de futebol</td>
+                </tr>
+                <tr>
+                <td></td>
+                <td></td>
+                <td>R$300 - evento de xadrex</td>
+                </tr>
+                <tr >
+                <td></td>
+                <td></td>
+                <td class="table-primary">R$2,000 Total</td>
+                </tr>
+            </tbody>
+            </table>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+   
+    <!-- jQuery CDN - versão Slim (sem AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- script geral -->
+    <script src="../../../script-geral/script.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script src="toastr.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+    });
+
+$(function(){
+  $("#tabela input").keyup(function(){       
+      var index = $(this).parent().index();
+      var nth = "#tabela td:nth-child("+(index+1).toString()+")";
+      var valor = $(this).val().toUpperCase();
+      $("#tabela tbody tr").show();
+      $(nth).each(function(){
+          if($(this).text().toUpperCase().indexOf(valor) < 0){
+              $(this).parent().hide();
+          }
+      });
+  });
+
+  $("#tabela input").blur(function(){
+      $(this).val("");
+  });
+    });
+    function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -20,16 +20,21 @@
 
     <!-- favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/school.png"/>
+
+    <script data-require="mustache.js@0.7.2" data-semver="0.7.2" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js"></script>
+    <script data-require="jquery@2.2.0" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body>
 
     <header>
-        <div class="header d-sm-flex justify-content-around align-items-center">
-            <h2 id="colegio"></h2>
-            <h1 id="usuario"></h1>
-            <h2 id="matricula"></h2>
-        </div>
+        <div class="mytable header d-sm-flex justify-content-center justify-content-around align-items-center">
+            <script class="item-template" type="text/header">
+                  <h2 id="colegio">{{colegio}}</h2>
+                  <h1 id="usuario">{{nome}}</h1>
+                  <h2 id="matricula">{{matricula}}</h2>
+            </script>
+          </div>
     </header>
 
     <main>

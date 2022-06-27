@@ -20,25 +20,32 @@
 
     <!-- favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/school.png"/>
+
+    <script data-require="mustache.js@0.7.2" data-semver="0.7.2" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js"></script>
+    <script data-require="jquery@2.2.0" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body>
 
     <header>
-        <div class="header d-sm-flex justify-content-around align-items-center">
-            <h2 id="colegio"></h2>
-            <h1 id="usuario"></h1>
-            <h2 id="matricula"></h2>
-        </div>
+        <div class="mytable header d-sm-flex justify-content-center justify-content-around align-items-center">
+            <script class="item-template" type="text/header">
+            
+                  <h2 id="colegio">{{colegio}}</h2>
+                  <h1 id="usuario">{{nome}}</h1>
+                  <h2 id="matricula">{{matricula}}</h2>
+              
+            </script>
+          </div>
     </header>
 
     <main>
         <div style="margin-left: 20px;">
             <a href="index.html" class="btn btn-secondary mt-5"><i class="fa fa-house-user"></i>Sair</a>
         </div>
-        <section>
+        <section class="mytable2">
           <div>
-              <h1 id="prova" class="text-center mt-5"></h1>
+                <h1 id="temProvaOnline" class="text-center mt-5"></h1>        
           </div>
         </section>
     </main>
@@ -47,6 +54,7 @@
 
     <!-- jQuery CDN - versão Slim (sem AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="../assets/script/script-aluno.js"></script>
     <!-- script geral -->
     <script src="../../../script-geral/script.js"></script>
     <!-- script do aluno -->
@@ -55,6 +63,23 @@
     <script src="../../../api/aluno/aluno.js"></script>
     <script src="../../../api/aluno/header.js"></script>
     <script src="../../../api/aluno/content.js"></script>
+
+    <script>
+        alunoJson
+        const semProva = "Não há provas disponíveis";
+        const temProvaOnline = document.querySelector('#temProvaOnline');
+        let provasOnline = 0;
+        alunoJson.disciplinas.forEach((item) => {
+            provasOnline = provasOnline + item.provaOnline;
+        });
+
+        if (provasOnline > 0) {
+            temProvaOnline.innerHTML = `Você tem ${provasOnline} prova${provasOnline != 1 ? 's' : ''} online`
+        } else {
+            temProvaOnline.innerHTML = semProva;
+        }
+
+    </script>
 
 </body>
 
