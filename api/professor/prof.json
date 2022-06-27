@@ -1,0 +1,18 @@
+[
+    {
+            "nome":"Jorge",
+            "idade":"41",
+            "email":"prof1@gmail.com",
+            "numero_de_telefone":32123123,
+            "disciplina": "Matematica"
+    },
+    
+    {
+        "nome":"Juliana",
+        "idade":"35",
+        "email":"prof2@gmail.com",
+        "numero_de_telefone:":10852968,
+        "disciplina": "Ingles"
+    }
+
+]
