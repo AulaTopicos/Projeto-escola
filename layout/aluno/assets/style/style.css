@@ -78,3 +78,15 @@ body{
 .card-aluno p{
     font-size: 1.3em;
 }
+
+/*=============mensagem======== */
+.card-mensagem{
+    text-align: center;
+    margin: auto;
+}
+.card-mensagem p{
+    font-size: 20px;
+}
+.card-mensagem a{
+   color: blue;
+}
