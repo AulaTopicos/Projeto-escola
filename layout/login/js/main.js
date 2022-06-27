@@ -83,7 +83,7 @@ btn.addEventListener("click" , function(e){
         window.location.replace("../professor/index.html")
     }
     else if(value == "secretaria@gmail.com" && valuePassword == "123" ){
-        window.location.replace("../secretaria/src/index.html")
+        window.location.replace("/layout/secretaria/home.html")
     }
      else{
       alert("Usuario ou senha estão incorretas")
