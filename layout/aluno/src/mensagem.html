@@ -9,8 +9,9 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../../secretaria/style-secretaria.css">
+     <!-- Our Custom CSS -->
+     <link rel="stylesheet" href="../../../assets/style-geral/style.css">
+     <link rel="stylesheet" href="../assets/style/style.css">
     <!-- favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/school.png"/>
     <!-- Font Awesome JS -->
@@ -69,7 +70,6 @@
             </ul>
         </nav>
         <div id="content">
-
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
@@ -84,34 +84,17 @@
 
                 </div>
             </nav>
-
-            <div>
-                <h3 style="text-align: center;">Mensagens</h3>
-            </div>
-
-            <div>
-                <select id="alunos" onfocus="mostrarAlunos()" onchange="mostrarConversaAluno(this.value)">
-                    <option value="">Selecione um aluno</option>
-                </select>
-            </div>
-
-            <div class="ps-container ps-theme-default ps-active-y" id="chat" style="overflow-y: scroll !important; height:340px !important;">
-                          
-                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                    <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+            <div class="card card-mensagem" style="width: 50rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Contato</h5>
+                 
+                  <p class="card-text">Contato-nos pelo numero whatsApp 
+                    <a href="https://wa.me/5541991285367">(41)99999-9999</a>
+                    ou por sms <a href="https://wa.me/5541991285367">(41)8888-8888</a></p>
+                  <p class="card-text" id="sendmail">e também pelo nosso e-mail <a href="">colegio3as@gmail.com</a> </p>
+                 
                 </div>
-                <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
-                    <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
-                </div>
-            </div>
-            <div > <img src="https://img.icons8.com/color/48/000000/user.png"/> 
-                <input type="text" id="mensagem" style="width: 900px;">  
-            <button onclick="enviarMensagem()" type="submit" class="btn btn-success">Enviar</button>
-        
-            </div>
-
-
-        </div>
+              </div>
         </div>
     </div>
 
@@ -127,12 +110,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+    <!-- script geral -->
+    <script src="../../../script-geral/script.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
+      
+
+        document.getElementById('sendmail').addEventListener('click', function(event){
+        event.preventDefault();
+            document.location.href = 'mailto:saruvavictor@gmail.com';
         });
     </script>
 
